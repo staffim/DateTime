@@ -1,0 +1,24 @@
+{
+    "name": "staffim/datetime",
+    "description": "Improvements for DateTime",
+    "keywords": ["timestamp", "timestampable"],
+    "license": "MIT",
+    "type": "bundle",
+    "authors": [
+        {"name": "Vyacheslav Salakhutdinov", "email": "megazoll@gmail.com"},
+        {"name": "Aleksandr Klimenkov", "email": "alx.devel@gmail.com"}
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "~4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Staffim\\DateTime\\": "DateTime"
+        },
+        "files": ["DateTime/functions.php"]
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
