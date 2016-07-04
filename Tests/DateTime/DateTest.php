@@ -1,6 +1,7 @@
 <?php
 
 use Staffim\DateTime\Date;
+use Staffim\DateTime\DateTime;
 
 class DateTest extends \PHPUnit_Framework_TestCase
 {
@@ -49,5 +50,14 @@ class DateTest extends \PHPUnit_Framework_TestCase
     {
         $date = new Date('now');
         $this->assertStringEndsWith('.000000+0000', $date->toIsoString());
+    }
+
+    public function testDateBeforeUnixTime()
+    {
+        $date = DateTime::createFromFormat('d.m.Y u', '06.06.1799 654321');
+        $nativeDate = $date->asNativeDate();
+        $this->assertNotFalse($nativeDate);
+        $this->assertNotFalse($date->asDate());
+        $this->assertEquals($date->format(DateTime::FULL_ISO8601), $nativeDate->format(DateTime::FULL_ISO8601));
     }
 }

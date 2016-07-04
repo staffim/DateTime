@@ -84,7 +84,7 @@ class DateTime extends \DateTimeImmutable implements \JsonSerializable
      */
     public function asDate()
     {
-        return Date::createFromFormat('U.u', $this->format('U.u'), $this->getTimezone());
+        return Date::createFromFormat('d.m.Y', $this->format('d.m.Y'), $this->getTimezone());
     }
 
     /**
@@ -92,6 +92,6 @@ class DateTime extends \DateTimeImmutable implements \JsonSerializable
      */
     public function asNativeDate()
     {
-        return \DateTime::createFromFormat('U.u', $this->format('U.u'), $this->getTimezone());
+        return \DateTime::createFromFormat(static::FULL_ISO8601, $this->format(static::FULL_ISO8601));
     }
 }
