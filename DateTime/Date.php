@@ -18,7 +18,7 @@ class Date extends DateTime
     /**
      * @throws \RuntimeException
      */
-    public function setTime($hour, $minute, $second = 0)
+    public function setTime($hour, $minute, $second = null, $microseconds = null)
     {
         throw new \RuntimeException('Can\'t set time on date');
     }

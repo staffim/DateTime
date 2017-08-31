@@ -8,7 +8,9 @@
         {"name": "Vyacheslav Salakhutdinov", "email": "megazoll@gmail.com"},
         {"name": "Aleksandr Klimenkov", "email": "alx.devel@gmail.com"}
     ],
-    "require": {},
+    "require": {
+        "php": "^7.0.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "~4.8"
     },
